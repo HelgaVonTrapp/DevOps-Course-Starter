@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block title %}To-Do App{% endblock %}
-
+to_do =get_items(DEFAULT_ITEMS)
 {% block content %}
+# with from todo_app.data.session_items import get_items
   <div class="jumbotron">
     <h1 class="display-4">To-Do App</h1>
     <p class="lead">Just another to-do app.</p>
@@ -13,7 +14,7 @@
       <ul class="list-group mb-4">
         <!-- List the todo items here -->
         def get_todo():
-        return render_template('session_items.py')
+        return render_template(to_do')
       </ul>
     </div>
   </div>
