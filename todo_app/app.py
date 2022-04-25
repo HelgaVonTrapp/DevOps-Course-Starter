@@ -9,3 +9,5 @@ app.config.from_object(Config())
 @app.route('/')
 def index():
     return render_template('index.html')
+def get_todo():
+    return render_template('session_items.py')
