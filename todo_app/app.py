@@ -6,6 +6,8 @@ app.config.from_object(Config())
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    todos = get_items()
+
+    return render_template('index.html',todos=todos)
     
 
