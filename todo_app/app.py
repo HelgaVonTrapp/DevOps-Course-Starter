@@ -7,8 +7,6 @@ app.config.from_object(Config())
 @app.route('/')
 def index():
     todos = get_items()
-return render_template('index.html',todos=todos)
-    
-@app.route('/post/<int:post_id>')
-def show_post(post_id):    
-    return 'Post %d' % post_id
+
+    return render_template('index.html',todos=todos)
+
