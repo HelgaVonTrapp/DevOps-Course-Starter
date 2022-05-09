@@ -1,21 +1,21 @@
 {% extends "layout.html" %}
 {% block title %}To-Do App{% endblock %}
 {% block content %}
-# with from todo_app.data.session_items import get_items
-  <div class="jumbotron">
-    <h1 class="display-4">To-Do App</h1>
-    <p class="lead">Just another to-do app.</p>
-  </div>
 
+  <div class="jumbotron">
+    <h1 class="display-4"><b>To-Do App</b></h1>
+    <p class="lead"><b>Just another to-do app.</b></p>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <h2>Items</h2>
       <ul class="list-group mb-4">
         <!-- List the todo items here -->
         {% for items in todos%}
-         <li> {{items.title}} - {{items.status}}</li>
+         <li> {{items.id}} {{items.title}} - {{items.status}}</li>
          {%endfor%}
       </ul>
     </div>
   </div>
+
 {% endblock %}
