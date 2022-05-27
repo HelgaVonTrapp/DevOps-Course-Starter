@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}To-Do App{% endblock %}
 {% block content %}
-
+<!-- Home page, code for listing predefined todo list from session_items.py and add items when clicking on the button-->
   <div class="jumbotron">
     <h1 class="display-4"><b>To-Do App</b></h1>
     <p class="lead"><b>Just another to-do app.</b></p>
@@ -17,5 +17,9 @@
       </ul>
     </div>
   </div>
-
+<!-- Home page, code for adding items when clicking on the Add To List button-->  
+<form action="/todo" method="post" class="todoadd-form">
+   <input type="text" name="title">
+   <input type="submit" value="Add To List">
+</form>
 {% endblock %}
