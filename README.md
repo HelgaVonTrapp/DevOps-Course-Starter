@@ -33,6 +33,10 @@ $ cp .env.template .env  # (first time only)
 ```
 
 The `.env` file is used by flask to set environment variables when running `flask run`. This enables things like development mode (which also enables features like hot reloading when you make a file change). There's also a [SECRET_KEY](https://flask.palletsprojects.com/en/1.1.x/config/#SECRET_KEY) variable which is used to encrypt the flask session cookie.
+This is also used to add your own Trello API Key, Token and Board ID as these are spefic to your Trello account, so please add them using the follwing Variable names:
+TRELLO_KEY='YOUR API KEY ID'
+TRELLO_TOKEN='YOUR TOKEN ID'
+TRELLO_BOARD='YOUR BOARD ID' 
 
 ## Running the App
 
