@@ -13,8 +13,8 @@ def get_items():
     }
  
   query = {
-    'key': '9c0d3be68129cbe4d579fe32310123a5',
-    'token': '58a1a2bc161d2f86b519250c5d11683a103222c98d6f53830b29acba9abf0a21',
+    'key': 'xx',
+    'token': 'xx',
     'cards': 'open',
     'card_fields':'name'
     }
