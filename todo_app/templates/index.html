@@ -8,13 +8,12 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h2>Items</h2>
+      <h4>Items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Status</h4>
       <ul class="list-group mb-4">
         <!-- List the todo items here -->
         {% for items in todos%}
-         <li> {{items.id}} {{items.title}} - {{items.status}}</li>
-         <!--li> {{name.name}}</li-->
-         {%endfor%}
+         <li> <!--{{items.id}}--> {{items.title}} -> {{items.status}}</li>
+                 {%endfor%}
       </ul>
     </div>
   </div>
