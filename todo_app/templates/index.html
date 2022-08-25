@@ -4,17 +4,43 @@
 <!-- Home page, code for listing predefined todo list from session_items.py and add items when clicking on the button-->
   <div class="jumbotron">
     <h1 class="display-4"><b>To-Do App</b></h1>
-    <p class="lead"><b>Just another to-do app.</b></p>
+    <p class="lead"><b>Helen's Trello to-do app.</b></p>
+<!--NEW-->  
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h4>Items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Status</h4>
-      <ul class="list-group mb-4">
+      <title>HTML Table with a Header, Footer and Body</title>
+      <style>
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+      </style>
+       
+<!--NEW-->     
+      <h4>Items</h4>
+      <table>
+        <tr>
+           <th>To do items</th>
+           <th>Status</th>
+           <th>Update to do item</th>
+        </tr>
         <!-- List the todo items here -->
         {% for items in todos%}
-         <li> <!--{{items.id}}--> {{items.title}} -> {{items.status}}</li>
-                 {%endfor%}
-      </ul>
+          <tr>
+            <td>{{items.title}}</td>
+            <td>{{items.status}}</td>
+            <td><input type="button" value="Edit"></td> 
+          </tr>
+        {%endfor%}
+        </table>
     </div>
   </div>
 <!-- Home page, code for adding items when clicking on the Add To List button-->  
