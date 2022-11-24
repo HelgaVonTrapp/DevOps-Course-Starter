@@ -25,19 +25,22 @@
       </style>
        
 <!--NEW-->     
-      <h4>Items</h4>
+      <h3><b>Items</b></h3>
       <table>
         <tr>
-           <th>To do items</th>
-           <th>Status</th>
-           <th>Update to do item</th>
+           <th><h5><b>To do items</b></h5></th>
+           <th><h5><b>Status</b></h5></th>
+           <th><h5><b>Edit to do item</b></h5></th>
         </tr>
         <!-- List the todo items here -->
         {% for items in todos%}
           <tr>
             <td>{{items.title}}</td>
             <td>{{items.status}}</td>
-            <td><input type="button" value="Edit"></td> 
+            <!--<td><input type="button" value="Edit"></td> -->
+            <form action="/completeitem/{{items.id}}" method="post" class="todoadd-form">
+              <td><input class="btn btn-primary" type="submit" value="Update Status"></td>
+            </form>
           </tr>
         {%endfor%}
         </table>
@@ -46,6 +49,10 @@
 <!-- Home page, code for adding items when clicking on the Add To List button-->  
 <form action="/todo" method="post" class="todoadd-form">
    <input type="text" name="title">
-   <input type="submit" value="Add To List">
+   <!--<input type="submit" value="Add To List">-->
+   <button class="btn btn-primary" type="submit">Add to List</button>
 </form>
+
+
+
 {% endblock %}
