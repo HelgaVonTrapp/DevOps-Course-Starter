@@ -18,7 +18,7 @@ def addtodo():
     title=request.form["title"]
     add_item(title)
     return redirect('/')
-#Application code to mark items as completed
+#Application code to mark items as Done
 @app.route('/completeitem/<id>', methods=['POST'])  
 def complete_item(id):
     update_item(id)

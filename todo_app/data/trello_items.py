@@ -1,8 +1,3 @@
-#from urllib import response
-#from cgitb import reset
-#from urllib import response
-#from urllib import response
-#from urllib import response
 import requests
 import json
 import os
@@ -10,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 trello_key=(os.getenv('TRELLO_KEY'))
 trello_token=(os.getenv('TRELLO_TOKEN'))
-
+#Get Trello items
 def get_items():
    
   url = "https://api.trello.com/1/boards/62f2b96de0b99c00aff27ae6/lists?"
@@ -33,15 +28,15 @@ def get_items():
     headers=headers,
     params=query,
     )
-  #Create a new array
+#Create a new array
   apiItems = []
-  #Convert json response to a dictionary item
+#Convert json response to a dictionary item
   aDict = json.loads(response.text)
-  #Creating a list from a dictionary item and using in the for statement
+#Creating a list from a dictionary item and using in the for statement
   for list in aDict:
     for card in list['cards']:
       apiItems.append({"id": card["id"], "title": card["name"], "status": list["name"]})
-  #returning array of data
+#returning array of data
   return apiItems.copy()
 
 #Add new item to Trello To Do List
@@ -65,16 +60,16 @@ def add_item(title):
     headers=headers,
     params=query
   )
-
+#find id as variable
 def update_item(id):
-  url = "https://api.trello.com/1/cards/" 
+  url = f"https://api.trello.com/1/cards/{id}" 
 
   headers = {
    "Accept": "application/json"
   }
-
+#Move to done status, this is the id of done list
   query = {
-   'idList': '62f2b96de0b99c00aff27aed',
+   'idList': '62f2b96de0b99c00aff27aef',
    'key': trello_key,
    'token': trello_token,
    'id': id
@@ -86,6 +81,3 @@ def update_item(id):
     headers=headers,
     params=query
   )
-#  pass
-#add_item(title)
-#add update_item
