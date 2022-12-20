@@ -56,3 +56,21 @@ You should see output similar to the following:
  * Debugger PIN: 226-556-590
 ```
 Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser to view the app.
+
+With Module 5 we have containerised the to-do app with Docker
+There are two environments you can run from the one dockerfile: Development using flask or Production using Gunicorn
+
+To run the development server, first build the image using this command:
+docker build --target development --tag todo-app-v0.3:dev .
+  
+Then to run the container, run this command:
+docker run --env-file ./.env -p 5100:5000 -it --mount type=bind,source="$(pwd)"/todo_app,target=/app/todo_app todo-app-v0.3:dev
+
+To run the production server, first build the image using this command:
+docker build --target production --tag todo-app-v0.3:prod .
+
+Then to run the container, run this command:
+docker run --env-file ./.env -p 5100:8000 -it --mount type=bind,source="$(pwd)"/todo_app,target=/app/todo_app todo-app-v0.3:prod
+
+Note: Port 5100 can be changed to another local port if preferred, if you wish to run the container in the background please enter docker run -d at the beginning of the command
+Any updates made to the 'Todo_app' code will be automatically displayed within the browser once the webpage has been refreshed

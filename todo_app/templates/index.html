@@ -4,40 +4,40 @@
 <!-- Home page, code for listing predefined todo list from session_items.py and add items when clicking on the button-->
   <div class="jumbotron">
     <h1 class="display-4"><b>To-Do App</b></h1>
-    <p class="lead"><b>Helen's Trello to-do app.</b></p>
-<!--NEW-->  
+    <p class="lead"><b>Helen's Trello to-do app.</b></p>  
   </div>
   <div class="row">
     <div class="col-md-12">
       <title>HTML Table with a Header, Footer and Body</title>
       <style>
         table {
-            width: 500px;
+            width: 600px;
             border-collapse: collapse;
         }
         table, th, td {
-            border: 1px solid black;
+            border: 2px solid black;
         }
         th, td {
             padding: 10px;
             text-align: left;
         }
-      </style>
-       
-<!--NEW-->     
-      <h4>Items</h4>
+      </style>    
+      <h3><b>Trello Items</b></h3>
       <table>
         <tr>
-           <th>To do items</th>
-           <th>Status</th>
-           <th>Update to do item</th>
+           <th><h6><b>To do items</b></h6></th>
+           <th><h6><b>Status</b></h6></th>
+           <th><h6><b>Update Status to Done</b></h6></th>
         </tr>
         <!-- List the todo items here -->
         {% for items in todos%}
           <tr>
             <td>{{items.title}}</td>
             <td>{{items.status}}</td>
-            <td><input type="button" value="Edit"></td> 
+            <!--<td><input type="button" value="Edit"></td> -->
+            <form action="/completeitem/{{items.id}}" method="post" class="todoadd-form">
+              <td><input class="btn btn-primary" type="submit" value="Update Status"></td> 
+            </form>
           </tr>
         {%endfor%}
         </table>
@@ -46,6 +46,8 @@
 <!-- Home page, code for adding items when clicking on the Add To List button-->  
 <form action="/todo" method="post" class="todoadd-form">
    <input type="text" name="title">
-   <input type="submit" value="Add To List">
+   <!--<input type="submit" value="Add To List">-->
+   <button class="btn btn-primary" type="submit">Add item to List</button>
 </form>
+
 {% endblock %}
