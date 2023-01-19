@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% block title %}To-Do App{% endblock %}
 {% block content %}
-<!-- Home page, code for listing predefined todo list from session_items.py and add items when clicking on the button-->
   <div class="jumbotron">
     <h1 class="display-4"><b>To-Do App</b></h1>
     <p class="lead"><b>Helen's Trello to-do app.</b></p>  
@@ -29,24 +28,20 @@
            <th><h6><b>Status</b></h6></th>
            <th><h6><b>Update Status to Done</b></h6></th>
         </tr>
-        <!-- List the todo items here -->
         {% for items in todos%}
           <tr>
             <td>{{items.title}}</td>
             <td>{{items.status}}</td>
-            <!--<td><input type="button" value="Edit"></td> -->
             <form action="/completeitem/{{items.id}}" method="post" class="todoadd-form">
-              <td><input class="btn btn-primary" type="submit" value="Update Status"></td> 
+              <td><input class="btn btn-primary" type="submit" value="Update"></td> 
             </form>
           </tr>
         {%endfor%}
         </table>
     </div>
   </div>
-<!-- Home page, code for adding items when clicking on the Add To List button-->  
 <form action="/todo" method="post" class="todoadd-form">
    <input type="text" name="title">
-   <!--<input type="submit" value="Add To List">-->
    <button class="btn btn-primary" type="submit">Add item to List</button>
 </form>
 
