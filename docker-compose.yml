@@ -1,0 +1,8 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  todo-app:
+    image: todo-app-v0.3
+    ports:
+      - 5100:8000
+volumes:
+  logvolume01: {}
