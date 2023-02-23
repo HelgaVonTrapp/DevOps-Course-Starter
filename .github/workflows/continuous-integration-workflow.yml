@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v3.3.0
 #    - uses: actions/checkout@v3 # Adds a step to checkout the repository code
     - name: build container
-      working-directory: C:\Users\helen.curtis\DevOps-course-starter\
+      working-directory: .\todo_app
       run: docker compose up --build --todo-app-v0.3.01:test
     - name: check it is alive
       run: sleep 5 && curl --fail http://localhost:5100/
