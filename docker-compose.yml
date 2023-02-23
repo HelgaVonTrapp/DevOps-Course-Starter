@@ -1,8 +1,16 @@
 version: "3.9"  # optional since v1.27.0
 services:
-  todo-app:
-    image: todo-app-v0.3
+  test:
+    build: 
+        context: .
+        target: test
+  launch-app:
+    build: 
+        context: .
+        target: development
     ports:
-      - 5100:8000
+      - 5100:5000
+    env_file: .env 
+             
 volumes:
   logvolume01: {}

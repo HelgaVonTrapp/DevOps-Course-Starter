@@ -3,12 +3,22 @@ on: [push]                      # Will make the workflow run every time you push
 
 jobs:
   build:
-    name: Build and test
+    name: check-build
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
     steps:
-    - uses: actions/checkout@v2 # Adds a step to checkout the repository code
-    - name: Hello world       # Name of step
-      run: echo 'Hello world' # Command to run
+    - name: Checkout
+      uses: actions/checkout@v3.3.0
+#    - uses: actions/checkout@v3 # Adds a step to checkout the repository code
+    - name: build container
+      run: docker compose up --build --detach
+    - name: check it is alive
+      run: sleep 5 && curl --fail http://localhost:5100/
+    - name: stop container
+      run: docker compose down
+#     args:
+#    - ${{ inputs.who-to-greet }}
+#    - name: Hello world       # Name of step
+#      run: echo 'Hello world' # Command to run
 #            - name: run C#
 #              run: dotnet build
 #            - name: run C# test
