@@ -6,14 +6,14 @@ jobs:
     name: check-build
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
     steps:
-    - uses: actions/checkout@v3 # Adds a step to checkout the repository code
-    - name: build container
+     - uses: actions/checkout@v3 # Adds a step to checkout the repository code
+     - name: build container
 #      workspace: GITHUB_WORKSPACE
-      working-directory: ${{ github.workspace }}
+#      working-directory: ${{ github.workspace }}
       run: docker compose up --build
-    - name: check it is alive
+     - name: check it is alive
       run: sleep 5 && curl --fail http://localhost:5100/
-    - name: stop container
+     - name: stop container
       run: docker compose down
 #     args:
 #    - ${{ inputs.who-to-greet }}
