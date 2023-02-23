@@ -10,8 +10,8 @@ jobs:
       uses: actions/checkout@v3.3.0
 #    - uses: actions/checkout@v3 # Adds a step to checkout the repository code
     - name: build container
-      working-directory: C:\Users\helen.curtis\DevOps-course-starter\.env
-      run: docker compose up --build --detach
+      working-directory: C:\Users\helen.curtis\DevOps-course-starter\
+      run: docker compose up --build
     - name: check it is alive
       run: sleep 5 && curl --fail http://localhost:5100/
     - name: stop container
