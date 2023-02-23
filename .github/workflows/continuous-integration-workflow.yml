@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3 # Adds a step to checkout the repository code
     - name: build container
-      workspace: GITHUB_WORKSPACE
+#      workspace: GITHUB_WORKSPACE
       working-directory: /github/workspace
       run: docker compose up --build
     - name: check it is alive
