@@ -3,53 +3,12 @@ on: [push]                      # Will make the workflow run every time you push
 
 jobs:
   docker:
-    timeout-minutes: 10
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3 # Adds a step to checkout the repository code
-
-    - name: Start container
-      run: docker-compose -f "docker-compose.yml" up -d --build
-
-#    - name: Install node
-#      uses: actions/setup-node@v1
-#      with:
-#        node-version: 14.x
-        
-#    - name: Install dependencies
-#      run: npm install
-
-#    - name: Run tests
-#      run: npm run test 
-    - name: check it is alive
-      run: sleep 5 && curl --fail http://localhost:5100/
-
-    - name: Stop containers
-      if: always()
-      run: docker-compose -f "docker-compose.yml" down 
-
-
-#    - name: check it is alive
-#      run: sleep 5 && curl --fail http://localhost:5100/
-#    - name: stop container
-#      run: docker compose down
-#     args:
-#    - ${{ inputs.who-to-greet }}
-#    - name: Hello world       # Name of step
-#      run: echo 'Hello world' # Command to run
-#            - name: run C#
-#              run: dotnet build
-#            - name: run C# test
-#              working-directory: ./DotnetTemplate.Web
-#              run: dotnet test
-#            - name: install and build npm
-#              working-directory: ./DotnetTemplate.Web
-#              run: npm install && npm run build
-#            - name: run the TypeScript tests
-#              working-directory: ./DotnetTemplate.Web
-#              run: npm t
-#            - name: run lint on TypeScript code
-#              working-directory: ./DotnetTemplate.Web
-#              run: npm run lint
+    - name: Build container
+      run: docker build --target test --tag todo-app-test .
+    - name: Run container
+      run: docker run todo-app-test
