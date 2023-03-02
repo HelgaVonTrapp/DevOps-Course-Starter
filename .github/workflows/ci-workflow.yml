@@ -1,6 +1,6 @@
 name: Continuous Integration
 
-on: [push,pull_request']   # Will make the workflow run every time you push to any branch or create a open pull request 
+on: [push,pull_request]   # Will make the workflow run every time you push to any branch or create a open pull request 
       paths-ignore: 
         - '\DevOps-course-starter\README.md  
 jobs:
