@@ -17,13 +17,13 @@ branches:
         - 'exercise-7#2'
 jobs:
   docker:
-    runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
+        runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3 # Adds a step to checkout the repository code
-    - name: Build container
-      run: docker build --target test --tag todo-app-test .
-    - name: Run container
-      run: docker run todo-app-test
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v3 # Adds a step to checkout the repository code
+        - name: Build container
+          run: docker build --target test --tag todo-app-test .
+        - name: Run container
+          run: docker run todo-app-test
     
