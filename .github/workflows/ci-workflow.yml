@@ -14,6 +14,7 @@ jobs:
       run: docker build --target test --tag todo-app-test .
     - name: Run container
       run: docker run todo-app-test
+on:     
   pull_request                
     types: [opened]
     branches:
