@@ -1,7 +1,7 @@
 name: Continuous Integration
 
 on: 
-  [push,pull_request]                # Will make the workflow run every time you push to any branch
+   push,pull_request                # Will make the workflow run every time you push to any branch
   branches:
   - main
   - 'exercise-7#2'
