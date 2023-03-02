@@ -10,7 +10,6 @@ services:
         target: development
     ports:
       - 5100:5000
-    env_file: .env 
-             
+    env_file: .env             
 volumes:
   logvolume01: {}
