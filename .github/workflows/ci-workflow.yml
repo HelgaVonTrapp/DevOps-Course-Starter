@@ -1,10 +1,10 @@
 name: Continuous Integration
 
 on: 
-  [push,pull_request]                # Will make the workflow run every time you push to any branch
-    branches:
-    - main
-    - 'exercise-7#2'
+[push,pull_request]                # Will make the workflow run every time you push to any branch
+  branches:
+  - main
+  - 'exercise-7#2'
 jobs:
   docker:
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
