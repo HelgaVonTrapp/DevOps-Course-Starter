@@ -2,7 +2,7 @@ name: Continuous Integration
 
 on: 
   push
-  pull_request:                # Will make the workflow run every time you push to any branch
+  pull_request                # Will make the workflow run every time you push to any branch
     types: [opened]
     branches:
       - main
