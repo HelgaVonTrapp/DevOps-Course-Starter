@@ -11,3 +11,7 @@ jobs:
       run: docker build --target test --tag todo-app-test .
     - name: Run container
       run: docker run todo-app-test
+    pull_request:
+      branches:
+        - main
+        - 'exercise-7#2'
