@@ -1,16 +1,16 @@
 name: Continuous Integration
 
-on: [push,pull_request]   # Will make the workflow run every time you push to any branch or create a open pull request 
-      push:
-      paths-ignore: 
-        - '\DevOps-course-starter\README.md  
+on:
+  push:
+    paths-ignore:
+      - README.md
 jobs:
   docker:
-    runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3 # Adds a step to checkout the repository code
-    - name: Build container
-      run: docker build --target test --tag todo-app-test .
-    - name: Run container
-      run: docker run todo-app-test    
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build container
+        run: docker build --target test --tag todo-app-test .
+      - name: Run container
+        run: docker run todo-app-test
