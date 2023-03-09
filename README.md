@@ -76,3 +76,5 @@ Note: Port 5100 can be changed to another local port if preferred, if you wish t
 Any updates made to the 'Todo_app' code will be automatically displayed within the browser once the webpage has been refreshed
 
 If you wish to view context, container and component diagrams please view all files in the documentation folder of this repository. The .drawio files can be opened in Visual Studio Code and viewed providing you have installed the Draw.io Integration extension. 
+
+Exercise 7 notes tbc
