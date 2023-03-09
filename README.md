@@ -74,4 +74,5 @@ docker run --env-file ./.env -p 5100:8000 -it --mount type=bind,source="$(pwd)"/
 
 Note: Port 5100 can be changed to another local port if preferred, if you wish to run the container in the background please enter docker run -d at the beginning of the command
 Any updates made to the 'Todo_app' code will be automatically displayed within the browser once the webpage has been refreshed
-Note:xx
+
+If you wish to view context, container and component diagrams please view all files in the documentation folder of this repository. The .drawio files can be opened in Visual Studio Code and viewed providing you have installed the Draw.io Integration extension. 
