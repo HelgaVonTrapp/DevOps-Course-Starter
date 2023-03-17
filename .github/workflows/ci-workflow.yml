@@ -4,9 +4,15 @@ on:
   push:
     paths-ignore:
       - README.md
+    branches:
+      - main
+      - exercise-7#2  
   pull_request:
     paths-ignore:
-      - README.md        
+      - README.md
+        branches:
+      - main
+      - exercise-7#2           
 jobs:
   docker:
     runs-on: ubuntu-latest

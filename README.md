@@ -77,4 +77,8 @@ Any updates made to the 'Todo_app' code will be automatically displayed within t
 
 If you wish to view context, container and component diagrams please view all files in the documentation folder of this repository. The .drawio files can be opened in Visual Studio Code and viewed providing you have installed the Draw.io Integration extension. 
 
-Exercise 7 notes tbc
+Basic tests have been added in tests and tests_end2end folder. Docker-compose.yml has been added so you can run docker compose up to launch a test docker container that will run the tests. You can launch the application by opening browser and going to http://localhost:5100/.
+
+A Github actions workflow has been added, this ignores any updates to this document (README.md)
+The workflow will test building the docker container and will run the tests on any branch of the code.
+Open Github and then open actions to view the workflow tests to see if the have run successfully.
