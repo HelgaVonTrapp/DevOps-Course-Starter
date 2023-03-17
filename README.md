@@ -81,4 +81,4 @@ Basic tests have been added in tests and tests_end2end folder. Docker-compose.ym
 
 A Github actions workflow has been added, this ignores any updates to this document (README.md)
 The workflow will test building the docker container on push and pull requests. The workflow will run the tests on the main branch and exercise-7#2 branch you can amend this in ci-workflow.yml for any branch you wish.
-Open Github and then open actions to view the workflow tests to see if the have run successfully.
+Open Github and then open actions to view the workflow tests to see if they have run successfully.
