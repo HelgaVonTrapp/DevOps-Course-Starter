@@ -80,5 +80,5 @@ If you wish to view context, container and component diagrams please view all fi
 Basic tests have been added in tests and tests_end2end folder. Docker-compose.yml has been added so you can run docker compose up to launch a test docker container that will run the tests. You can launch the application by opening browser and going to http://localhost:5100/.
 
 A Github actions workflow has been added, this ignores any updates to this document (README.md)
-The workflow will test building the docker container and will run the tests on any branch of the code.
+The workflow will test building the docker container on push and pull requests. The workflow will run the tests on the main branch and exercise-7#2 branch you can amend this in ci-workflow.yml for any branch you wish.
 Open Github and then open actions to view the workflow tests to see if the have run successfully.
