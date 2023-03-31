@@ -77,7 +77,8 @@ Any updates made to the 'Todo_app' code will be automatically displayed within t
 
 If you wish to view context, container and component diagrams please view all files in the documentation folder of this repository. The .drawio files can be opened in Visual Studio Code and viewed providing you have installed the Draw.io Integration extension. 
 
-Basic tests have been added in tests and tests_end2end folder. Docker-compose.yml has been added so you can run docker compose up to launch a test docker container that will run the tests. You can launch the application by opening browser and going to http://localhost:5100/.
+Basic tests have been added in tests and tests_end2end folder. Docker-compose.yml has been added so you can run 'docker compose up' to launch a test docker container that will run the tests. You can launch the application by opening browser and going to http://localhost:5100/.
+You can run these tests without Docker by using this command 'poetry run pytest'
 
 A Github actions workflow has been added, this ignores any updates to this document (README.md)
 The workflow will test building the docker container on push and pull requests. The workflow will run the tests on the main branch and exercise-7#2 branch you can amend this in ci-workflow.yml for any branch you wish.
