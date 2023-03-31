@@ -1,0 +1,13 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  test:
+    build: 
+        context: .
+        target: test
+  launch-app:
+    build: 
+        context: .
+        target: development
+    ports:
+      - 5100:5000
+    env_file: .env             

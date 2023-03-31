@@ -74,3 +74,12 @@ docker run --env-file ./.env -p 5100:8000 -it --mount type=bind,source="$(pwd)"/
 
 Note: Port 5100 can be changed to another local port if preferred, if you wish to run the container in the background please enter docker run -d at the beginning of the command
 Any updates made to the 'Todo_app' code will be automatically displayed within the browser once the webpage has been refreshed
+
+If you wish to view context, container and component diagrams please view all files in the documentation folder of this repository. The .drawio files can be opened in Visual Studio Code and viewed providing you have installed the Draw.io Integration extension. 
+
+Basic tests have been added in tests and tests_end2end folder. Docker-compose.yml has been added so you can run 'docker compose up' to launch a test docker container that will run the tests. You can launch the application by opening browser and going to http://localhost:5100/.
+You can run these tests without Docker by using this command 'poetry run pytest'
+
+A Github actions workflow has been added, this ignores any updates to this document (README.md)
+The workflow will test building the docker container on push and pull requests. The workflow will run the tests on the main branch and exercise-7#2 branch you can amend this in ci-workflow.yml for any branch you wish.
+Open Github and then open actions to view the workflow tests to see if they have run successfully.
