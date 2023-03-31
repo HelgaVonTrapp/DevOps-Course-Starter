@@ -83,3 +83,4 @@ You can run these tests without Docker by using this command 'poetry run pytest'
 A Github actions workflow has been added, this ignores any updates to this document (README.md)
 The workflow will test building the docker container on push and pull requests. The workflow will run the tests on the main branch and exercise-7#2 branch you can amend this in ci-workflow.yml for any branch you wish.
 Open Github and then open actions to view the workflow tests to see if they have run successfully.
+Images are now deployed to DockerHub for development you can access using this link: 'https://hub.docker.com/repository/docker/helencurtis02/todo-app-dev/general'
