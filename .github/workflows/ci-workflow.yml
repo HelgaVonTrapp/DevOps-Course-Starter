@@ -23,7 +23,11 @@ jobs:
         run: docker build --target test --tag todo-app-test .
       - name: Run container
         run: docker run todo-app-test
+      - name: Check if docker-run-main can run
+        if: ${{ github.event_name == 'push' && github.event_name.branches == 'exercise-9'}}
+        run: docker-run-main      
   docker-run-main:
-    needs: docker-run-test    
+    needs: docker-run-test  
+    if github.Run container =   
     runs-on: ubuntu-latest
-        run: echo Publishing!
+        run: echo I am working
