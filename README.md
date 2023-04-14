@@ -123,7 +123,7 @@ Value: [Your TRELLO_TODO_LIST]
 Name: TRELLO_DONE_LIST
 Value: [Your TRELLO_DONE_LIST]
 
-9.	Now browse to this url ‘http://helcur-todoapp-prod.azurewebsites.net/’and the website should be displayed in your browser.
+9.	Now browse to this url ‘https://helcur-todoapp-prod.azurewebsites.net/’and the website should be displayed in your browser.
 
 Updating the container
 ----------------------
