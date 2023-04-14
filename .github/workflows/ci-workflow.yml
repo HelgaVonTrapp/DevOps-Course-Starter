@@ -6,7 +6,7 @@ on:
       - README.md
     branches:
       - main
-      - exercise-8  
+      - exercise-9  
   pull_request:
     paths-ignore:
       - README.md
@@ -14,7 +14,7 @@ on:
       - main
       - 'exercise**'           
 jobs:
-  docker:
+  docker-run-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,3 +23,7 @@ jobs:
         run: docker build --target test --tag todo-app-test .
       - name: Run container
         run: docker run todo-app-test
+  docker-run-main:
+    needs: docker-run-test    
+    runs-on: ubuntu-latest
+        run: echo Publishing!
