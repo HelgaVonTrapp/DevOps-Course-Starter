@@ -28,7 +28,7 @@ jobs:
     needs: docker-run-test   
     runs-on: ubuntu-latest
     env:
-      AZURE_PROD_WEBHOOK: '$'
+      AZURE_PROD_WEBHOOK: 'AZURE_PROD_WEBHOOK'
     steps:
 #     build and push docker container          
       - name: Checkout prod
@@ -43,4 +43,4 @@ jobs:
       - name: Push Container to DockerHub
         run: docker push helencurtis02/todo-app-prod:latest
       - name: Update Azure
-        run: curl -dH --fail -X POST $AZURE_PROD_WEBHOOK
+        run: curl -dH --fail -X POST AZURE_PROD_WEBHOOK
