@@ -42,8 +42,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
 #     build and push docker container          
-#     - name: Build and push
-#       uses: docker/build-push-action@v4
-#       with:
-#          push: true
-#          tags: user/todo-app-prod:latest
+     - name: Build and push
+       uses: docker/build-push-action@v4
+       with:
+          push: true
+          tags: user/todo-app-prod:latest
