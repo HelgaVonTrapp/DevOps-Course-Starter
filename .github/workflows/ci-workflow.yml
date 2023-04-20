@@ -36,3 +36,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
+      - name: Build Docker Container
+        run: docker build --target production --tag todo-app-prod:latest .
+      - name: Push Container to DockerHub
+        run: docker push todo-app-prod:latest
+        
