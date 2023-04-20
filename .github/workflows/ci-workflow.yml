@@ -41,6 +41,6 @@ jobs:
       - name: Build prod container
         run: docker build --target production --tag todo-app-prod:latest .
       - name: Push Container to DockerHub
-        run: docker push todo-app-prod:latest
+        run: docker push helencurtis02/todo-app-prod:latest
       - name: Run container
         run: docker run todo-app-test
