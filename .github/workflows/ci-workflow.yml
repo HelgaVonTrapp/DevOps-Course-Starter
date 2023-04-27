@@ -42,8 +42,5 @@ jobs:
           password: ${{secrets.DOCKERHUB_TOKEN}}
       - name: Push Container to DockerHub
         run: docker push helencurtis02/todo-app-prod:latest
-      - name: Update Azure
-      #or try this - last resort for today
-        with:
-          AZURE_PROD_WEBHOOK: ${{secrets.AZURE_PROD_WEBHOOK}}
-        run: curl -dH --fail -X POST "AZURE_PROD_WEBHOOK"
+      - name: Update Azure Image
+        run: curl -dH --fail -X POST 'AZURE_PROD_WEBHOOK'
