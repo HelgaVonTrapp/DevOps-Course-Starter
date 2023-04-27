@@ -6,7 +6,6 @@ on:
       - README.md
     branches:
       - main
-      - exercise-9  
   pull_request:
     paths-ignore:
       - README.md
@@ -24,7 +23,7 @@ jobs:
       - name: Run container
         run: docker run todo-app-test           
   docker-run-main:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/exercise-9'}}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
     needs: docker-run-test   
     runs-on: ubuntu-latest
     steps:
