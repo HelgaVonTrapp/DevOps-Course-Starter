@@ -43,4 +43,4 @@ jobs:
       - name: Push Container to DockerHub
         run: docker push helencurtis02/todo-app-prod:latest
       - name: Update Azure Image
-        run: curl -dH --fail -X POST 'AZURE_PROD_WEBHOOK'
+        run: curl -dH --fail -X POST 'https://$helcur-todoapp-prod:au5NZah4xxilffmidZA9gvyRCHTeEuGwDYvxpsXoFwyCr6vt8NuxamAErKme@helcur-todoapp-prod.scm.azurewebsites.net/api/registry/webhook'
