@@ -22,7 +22,7 @@ jobs:
         run: docker build --target test --tag todo-app-test .
       - name: Run container
         run: docker run todo-app-test           
-  docker-run-main:
+  docker-run-deployment:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
     needs: docker-run-test   
     runs-on: ubuntu-latest
