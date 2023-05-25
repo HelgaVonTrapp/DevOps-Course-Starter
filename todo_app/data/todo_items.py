@@ -48,12 +48,12 @@ def add_item(title):
  #  'name': title
  # }
 collection.insert_one({"title":"to-do 4","description":"to-do 4 description","status":"Not Started"})
-response = requests.request(
+#response = requests.request(
 #"POST",
     #url,
     #headers=headers,
     #params=query
-  )
+#  )
 
 def update_item(id):
   for doc in documents.find({}):
