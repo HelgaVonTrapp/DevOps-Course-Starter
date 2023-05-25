@@ -18,15 +18,16 @@ def get_items():
   headers = {
     "Accept": "application/json"
     }
-collection = database['todoapp-Collection']
-documents = list(collection.find())
-print(documents)
-
+  collection = database['todoapp-Collection']
+  documents = list(collection.find())
+  print(documents)
+  return documents
 #response = requests.request(
 #    "GET",
 #    url,
 #    headers=headers,
-#    params=query,
+#    params=
+# ),
  #   )
 #apiItems = []
 #aDict = json.loads(documents.text)
@@ -37,41 +38,33 @@ print(documents)
 
 def add_item(title):
 #  url = "https://api.trello.com/1/cards"
-
-  headers = {
-   "Accept": "application/json"
-  }
-  #query = {
+  #
+  # ) = {
   # 'idList': trello_todo_list,
   # 'key': trello_key,
   # 'token': trello_token,
  #  'name': title
  # }
-collection.insert_one({"title":"to-do 4","description":"to-do 4 description","status":"Not Started"})
+  collection = database['todoapp-Collection']
+  collection.insert_one({"title":title,"description":"","status":"Not Started"})
 #response = requests.request(
 #"POST",
     #url,
     #headers=headers,
-    #params=query
+    #params=
 #  )
 
 def update_item(id):
-  for doc in documents.find({}):
-    print(doc)
+  collection = database['todoapp-Collection']
+  collection.update_one({"_id":id}, {"$set": {"status": "Complete"}})
+  return id
 #  url = f"https://api.trello.com/1/cards/{id}" 
 
-  headers = {
-   "Accept": "application/json"
-  }
-#  query = {
+
+#  
+# ) = {
 #   'idList': trello_done_list,
 #   'key': trello_key,
 #   'token': trello_token,
 #   'id': id
-#  }
-  response = requests.request(
-#    "PUT",
-#    url,
-#    headers=headers,
-#    params=query
-  )
+# )
