@@ -6,6 +6,7 @@ on:
       - README.md
     branches:
       - main
+      - 'exercise**' 
   pull_request:
     paths-ignore:
       - README.md
