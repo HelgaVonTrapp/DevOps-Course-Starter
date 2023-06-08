@@ -55,10 +55,19 @@ def add_item(title):
 #  )
 
 def update_item(id):
+  url = f"{id}" 
+  headers = {
+   "Accept": "application/json"
+    }
   collection = database['todoapp-Collection']
-  collection.update_one({"_id":id}, {"$set": {"status": "Complete"}})
-  return id
-#  url = f"https://api.trello.com/1/cards/{id}" 
+  filter_criteria = {'_id':id}
+  update_operation = {"$set":{"description":"","status":"Completed"}}
+  collection.update_one(filter_criteria, update_operation)
+#    return id
+print(id)
+
+#url = f"{id}" 
+
 
 
 #  
@@ -66,5 +75,5 @@ def update_item(id):
 #   'idList': trello_done_list,
 #   'key': trello_key,
 #   'token': trello_token,
-#   'id': id
+#'id': id
 # )
