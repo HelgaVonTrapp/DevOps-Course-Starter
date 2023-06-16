@@ -34,8 +34,8 @@
             <td>{{items.title}}</td>
             <td>{{items.status}}</td>
             <td>{{items.description}}</td>
-            <form action="/completeitem/{{items._id}}" method="post" class="todoadd-form">
-              <td><input class="btn btn-primary" type="submit" value="Update"></td> 
+            <form action="/completeitem/{{items._id}}" method="post" class="todoadd-form"> 
+              <td><input class="btn btn-primary" type="submit" value="Update"{% if 'Complete' in items.status %} disabled {% endif %}></td> 
             </form>
           </tr>
         {%endfor%}
