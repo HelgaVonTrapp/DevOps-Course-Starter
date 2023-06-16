@@ -139,3 +139,24 @@ Status: Image is up to date for helencurtis02/todo-app-prod:latest
 Updated for Continuous Deployment
 ---
 When code is updated on the main branch the pipeline will now automatically run the built in tests and if successfull will update the DockerHub image for production and then updates the build in Azure. 
+
+To-Do-App now uses MongoDB instead of Trello
+--
+To configure to use with your own MongoDB, update these new variables in the .env to match your MongoDB in Azure, You can now remove all references to Trello:
+
+MONGO_CONNECTION_STRING: Set this to your PRIMARY CONNECTION STRING found in Azure
+
+MONGO_DB_NAME: Set this to your Mongo DB name
+
+Add the above as application settings to the Azure application, again the Trello settings can now be removed. 
+
+1. Create a new collection for your database:
+
+2. From your MongoDB in Azure click --> New Collection
+Set Collection id = <b>todoapp-Collection</b>
+
+3. Sharding --> select Unsharded
+
+4. Analytical store is default to Off --> leave as default
+
+5. Under Advanced - indexing for create a Wildcard index.. is enabled leave as default
