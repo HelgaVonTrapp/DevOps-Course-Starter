@@ -13,9 +13,8 @@ def create_app():
     @app.route('/todo', methods=['POST'])
     def addtodo():
         title=request.form["title"]
-        #description=request.form["description"]
-        #add_item(title,description)
-        add_item(title)
+        description=request.form["description"]
+        add_item(title,description)
         return redirect('/')
 
     @app.route('/completeitem/<id>', methods=['POST'])

@@ -21,9 +21,9 @@ def get_items():
   print(documents)
   return documents
 
-def add_item(title):
+def add_item(title,description):
   collection = database['todoapp-Collection']
-  collection.insert_one({"title":title,"description":"","status":"Not Started"})
+  collection.insert_one({"title":title,"description":description,"status":"Not Started"})
 
 def update_item(id):
   collection = database['todoapp-Collection']
