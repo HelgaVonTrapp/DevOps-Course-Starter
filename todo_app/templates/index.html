@@ -3,7 +3,7 @@
 {% block content %}
   <div class="jumbotron">
     <h1 class="display-4"><b>To-Do App</b></h1>
-    <p class="lead"><b>Trello to-do app manager</b></p>  
+    <p class="lead"><b>To-do app manager</b></p>  
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -21,19 +21,21 @@
             text-align: left;
         }
       </style>    
-      <h3><b>Trello Items</b></h3>
+      <h3><b>To-do Items</b></h3>
       <table>
         <tr>
            <th><h6><b>To do items</b></h6></th>
            <th><h6><b>Status</b></h6></th>
-           <th><h6><b>Update Status to Done</b></h6></th>
+           <th><h6><b>Description</b></h6></th>
+           <th style="width:20%"><h6><b>Update to Complete</b></h6></th>
         </tr>
         {% for items in todos%}
           <tr>
             <td>{{items.title}}</td>
             <td>{{items.status}}</td>
-            <form action="/completeitem/{{items.id}}" method="post" class="todoadd-form">
-              <td><input class="btn btn-primary" type="submit" value="Update"></td> 
+            <td>{{items.description}}</td>
+            <form action="/completeitem/{{items._id}}" method="post" class="todoadd-form"> 
+              <td><input class="btn btn-primary" type="submit" value="Update"{% if 'Complete' in items.status %} disabled {% endif %}></td> 
             </form>
           </tr>
         {%endfor%}
@@ -41,8 +43,13 @@
     </div>
   </div>
 <form action="/todo" method="post" class="todoadd-form">
-   <input type="text" name="title">
+  <br>
+  <lable for="todoitem"><b>New ToDo Item:</b></lable><br><input type="text" name="title"><br> 
+  <lable for="decription"><b>Add Description:</b></lable><br>
+  <input type="text" name="description"><br>
+  <br>
    <button class="btn btn-primary" type="submit">Add item to List</button>
+   
 </form>
 
 {% endblock %}
