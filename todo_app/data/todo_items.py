@@ -1,13 +1,10 @@
-import collections
 from turtle import title
 from typing import Collection
 from unittest import result
-import requests
-import json
+from bson import ObjectId
 import os
 import pymongo
-from dotenv import load_dotenv
-load_dotenv()
+
 
 mongo_connection=(os.getenv('MONGO_CONNECTION_STRING'))
 mongo_db=(os.getenv('MONGO_DB_NAME'))
@@ -27,5 +24,5 @@ def add_item(title,description):
 
 def update_item(id):
   collection = database['todoapp-Collection']
-  collection.update_one({"_id":id},{"$set":{"status":"Complete"}})
+  collection.update_one({"_id":ObjectId(id)},{"$set":{"status":"Complete"}})
 
