@@ -160,3 +160,9 @@ Set Collection id = <b>todoapp-Collection</b>
 4. Analytical store is default to Off --> leave as default
 
 5. Under Advanced - indexing for create a Wildcard index.. is enabled leave as default
+
+To-Do-App now uses GitHub OAuth to verify users accessing this web application.
+--
+This will avoid all our to-dos being publicly accessible.
+
+You will need a GitHub account and you will be prompted to enter your credentials to obtain an access code before you can access this website.
