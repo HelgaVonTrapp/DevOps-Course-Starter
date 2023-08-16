@@ -24,7 +24,7 @@ jobs:
       - name: Run container
         run: docker run todo-app-test           
   docker-run-deployment:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/exercise-11'}}
     needs: docker-run-test   
     runs-on: ubuntu-latest
     steps:
